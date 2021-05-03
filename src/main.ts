@@ -22,11 +22,14 @@ import '@ionic/vue/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import sampleAnimation from "@/utils/Transition";
 
 const app = createApp(App)
-  .use(IonicVue)
+  .use(IonicVue, {
+    // navAnimation: sampleAnimation /* Animation doesn't even work globally */
+  })
   .use(router);
-  
+
 router.isReady().then(() => {
   app.mount('#app');
 });

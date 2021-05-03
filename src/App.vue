@@ -1,18 +1,24 @@
 <template>
   <ion-app>
-    <ion-router-outlet />
+    <ion-router-outlet :animation="sampleAnimation" />
+                  <!-- 👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆 -->
+                  <!-- this doesn't seem to work -->
   </ion-app>
 </template>
 
 <script lang="ts">
-import { IonApp, IonRouterOutlet } from '@ionic/vue';
-import { defineComponent } from 'vue';
+import { IonApp, IonRouterOutlet } from "@ionic/vue";
+import { defineComponent } from "vue";
+import sampleAnimation from "@/utils/Transition";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
     IonApp,
-    IonRouterOutlet
-  }
+    IonRouterOutlet,
+  },
+  setup() {
+    return { sampleAnimation };
+  },
 });
 </script>
